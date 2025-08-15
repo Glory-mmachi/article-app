@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ArticlesService } from './articles.service';
-import type { articleDto } from './dto/article.dto';
+import type { ArticleDto } from './dto/article.dto';
 
 @Controller('articles')
 export class ArticlesController {
@@ -10,9 +10,8 @@ export class ArticlesController {
   findAll() {
     return this.articleService.findAll();
   }
-
   @Post()
-  create(@Body() input: articleDto) {
+  create(@Body() input: ArticleDto) {
     return this.articleService.create(input);
   }
 }
